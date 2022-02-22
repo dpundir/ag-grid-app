@@ -1,0 +1,37 @@
+<button (click)="paste(false)">Paste Before Selected</button>
+<button (click)="paste(true)">Paste After Selected</button>
+<button (click)="copy()">Copy Selected</button>
+<button (click)="buttonCopyExecCommand()">Copy Selected Exec Command</button>
+<!--button (click)="buttonPasteExecCommand()">Paste Selected Exec Command</button-->
+<!--textarea id="myText"></textarea>
+<textarea id="output"></textarea-->
+<!--input #myText (paste)="onPaste($event)" (input)="onInput(myText.value)"
+  style="width:0px; height:0px; border-width:1px; border-color:white; padding:0px;"/-->
+<ag-grid-angular style="width: 500px; height: 500px;" class="ag-theme-alpine" [rowData]="rowData"
+  [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [rowSelection]="rowSelection" [rowData]="rowData"
+  (rowSelected)="onRowSelected($event)" (selectionChanged)="onSelectionChanged($event)"
+  (gridReady)="onGridReady($event)">
+</ag-grid-angular>
+<table>
+  <tr>
+    <td></td><td>Chrome</td><td>Edge</td><td>Firefox</td>
+  </tr>
+  <tr>
+    <td>Browser user permission asked</td><td>Y</td><td>Y</td><td>No permission supported</td>
+  </tr>
+  <tr>
+    <td>Button copy</td><td>Y</td><td>Y</td><td>Y</td>
+  </tr>
+  <tr>
+    <td>Ctrl-C copy</td><td>Y</td><td>Y</td><td>Y</td>
+  </tr>
+  <tr>
+    <td>Button paste</td><td>Permission required</td><td>Permission required</td><td>No permission supported</td>
+  </tr>
+  <tr>
+    <td>Ctrl-V paste</td><td>Y</td><td>Y</td><td>Y</td>
+  </tr>
+  <tr>
+    <td>Ctrl-X cut</td><td>Y</td><td>Y</td><td>Y</td>
+  </tr>
+</table>
